@@ -24,9 +24,10 @@ class _BottomBarState extends State<BottomBar> {
         },
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
-              label: "Home"),
+            icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
+            activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
+            label: "Home",
+          ),
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
