@@ -5,14 +5,14 @@ import 'package:ticket_app/src/profile.dart';
 import 'package:ticket_app/src/search.dart';
 import 'package:ticket_app/src/tickets.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class App extends StatefulWidget {
+  const App({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<App> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<App> {
   int selectedIndex = 0;
   final appScreen = [
     const Center(
