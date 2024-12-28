@@ -1,7 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_app/src/widgets/media_path.dart';
-import 'package:ticket_app/src/widgets/styles.dart';
+import 'package:ticket_app/styles/media_path.dart';
+import 'package:ticket_app/styles/styles.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 222, 222, 222),
+      backgroundColor: AppStyle.bgColor,
       body: ListView(
         children: [
           Padding(
@@ -45,6 +45,30 @@ class Home extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
+
+                // // ...............search bar................
+                // SearchBar(
+                //   hintText: 'Search...',
+                //   leading: const Icon(Icons.search),
+                //   //..............shadow color............
+                //   shadowColor: const WidgetStatePropertyAll(
+                //       Color.fromARGB(255, 211, 0, 0)),
+                //   //..............background color.........
+                //   backgroundColor: const WidgetStatePropertyAll(
+                //       Color.fromARGB(255, 203, 208, 211)),
+                //   //.....
+                //   elevation: const WidgetStatePropertyAll(
+                //       8), // shadow এর অবস্থান নির্ণয় করে
+
+                //   //.........shape.........
+                //   shape: WidgetStatePropertyAll(
+                //     RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(10)),
+                //   ),
+                //   padding: const WidgetStatePropertyAll(
+                //       EdgeInsets.symmetric(horizontal: 7)),
+                // ),
+
                 SizedBox(
                   height: 48,
                   child: Expanded(
