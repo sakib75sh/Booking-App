@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/src/widgets/app_double_text.dart';
+import 'package:ticket_app/src/widgets/ticket_view.dart';
 import 'package:ticket_app/styles/media_path.dart';
 import 'package:ticket_app/styles/styles.dart';
 
@@ -46,30 +47,6 @@ class Home extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-
-                // // ...............search bar................
-                // SearchBar(
-                //   hintText: 'Search...',
-                //   leading: const Icon(Icons.search),
-                //   //..............shadow color............
-                //   shadowColor: const WidgetStatePropertyAll(
-                //       Color.fromARGB(255, 211, 0, 0)),
-                //   //..............background color.........
-                //   backgroundColor: const WidgetStatePropertyAll(
-                //       Color.fromARGB(255, 203, 208, 211)),
-                //   //.....
-                //   elevation: const WidgetStatePropertyAll(
-                //       8), // shadow এর অবস্থান নির্ণয় করে
-
-                //   //.........shape.........
-                //   shape: WidgetStatePropertyAll(
-                //     RoundedRectangleBorder(
-                //         borderRadius: BorderRadius.circular(10)),
-                //   ),
-                //   padding: const WidgetStatePropertyAll(
-                //       EdgeInsets.symmetric(horizontal: 7)),
-                // ),
-
                 SizedBox(
                   height: 48,
                   child: Column(
@@ -101,6 +78,21 @@ class Home extends StatelessWidget {
                 const AppDoubleText(
                   leadingText: 'Upcomming Flights',
                   endText: 'View all',
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      TicketView(),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      TicketView(),
+                    ],
+                  ),
                 )
               ],
             ),
