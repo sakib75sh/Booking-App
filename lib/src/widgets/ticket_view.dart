@@ -8,7 +8,8 @@ import 'package:ticket_app/styles/styles.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  const TicketView({super.key, required this.ticket});
+  final bool fullScreen;
+  const TicketView({super.key, required this.ticket, this.fullScreen = false});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class TicketView extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(right: 16),
+            margin: EdgeInsets.only(right: fullScreen == true ? 0 : 16),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
                 color: AppStyle.ticketBlue,
@@ -87,7 +88,7 @@ class TicketView extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(right: 16),
+            margin: EdgeInsets.only(right: fullScreen == true ? 0 : 16),
             decoration: BoxDecoration(
                 color: AppStyle.ticketOrange,
                 borderRadius: const BorderRadius.only(

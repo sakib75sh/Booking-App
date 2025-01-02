@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/src/app.dart';
+import 'package:ticket_app/route/routes.dart';
 
 class TestClass {
   int x;
@@ -30,9 +30,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: App(),
+      routerConfig: RoutePages.router,
+      // home: App(),
     );
   }
 }
