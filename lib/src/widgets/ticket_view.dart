@@ -7,18 +7,19 @@ import 'package:ticket_app/src/widgets/text_with_style4.dart';
 import 'package:ticket_app/styles/styles.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  final Map<String, dynamic> ticket;
+  const TicketView({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return SizedBox(
-      width: size.width * 0.8,
+      width: size.width * 0.85,
       height: 189,
       child: Column(
         children: [
           Container(
-            // margin: const EdgeInsets.only(right: 16),
+            margin: const EdgeInsets.only(right: 16),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
                 color: AppStyle.ticketBlue,
@@ -30,8 +31,8 @@ class TicketView extends StatelessWidget {
                 //------show Departure and destination with icons
                 Row(
                   children: [
-                    const TextWithStyle3(
-                      text: "NYC",
+                    TextWithStyle3(
+                      text: ticket["from"]["code"],
                     ),
                     Expanded(child: Container()),
                     const BigDot(),
@@ -47,7 +48,9 @@ class TicketView extends StatelessWidget {
                         Center(
                             child: Transform.rotate(
                           angle: 1.57,
-                          child: const Icon(
+                          child: const
+                              // Text("plane")
+                              Icon(
                             Icons.local_airport_rounded,
                             color: Colors.white,
                           ),
@@ -56,26 +59,26 @@ class TicketView extends StatelessWidget {
                     )),
                     const BigDot(),
                     Expanded(child: Container()),
-                    const TextWithStyle3(text: "LND")
+                    TextWithStyle3(text: ticket["to"]["code"])
                   ],
                 ),
 
                 //------show Departure and destination with icons
                 Row(
                   children: [
-                    const SizedBox(
+                    SizedBox(
                       width: 100,
                       child: TextWithStyle4(
-                        text: 'New-York',
+                        text: ticket["from"]["name"],
                       ),
                     ),
                     Expanded(child: Container()),
-                    const TextWithStyle4(text: '8H 30M'),
+                    TextWithStyle4(text: ticket["flying_time"]),
                     Expanded(child: Container()),
-                    const SizedBox(
+                    SizedBox(
                         width: 100,
                         child: TextWithStyle4(
-                          text: "London",
+                          text: ticket["to"]["name"],
                           align: TextAlign.end,
                         )),
                   ],
@@ -84,6 +87,7 @@ class TicketView extends StatelessWidget {
             ),
           ),
           Container(
+            margin: const EdgeInsets.only(right: 16),
             decoration: BoxDecoration(
                 color: AppStyle.ticketOrange,
                 borderRadius: const BorderRadius.only(
@@ -112,41 +116,76 @@ class TicketView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(
                       top: 5, right: 16, left: 16, bottom: 16),
-                  child: Column(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                              width: 50, child: TextWithStyle3(text: "1 MAY")),
-                          Expanded(child: Container()),
-                          const TextWithStyle3(text: "08:00 AM"),
-                          Expanded(child: Container()),
-                          const SizedBox(
-                              width: 50,
-                              child: TextWithStyle3(
-                                text: "23",
-                                align: TextAlign.end,
-                              )),
+                          TextWithStyle3(text: ticket["date"]),
+                          const TextWithStyle4(text: "Date")
                         ],
                       ),
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const SizedBox(
-                              width: 80, child: TextWithStyle4(text: "Date")),
-                          Expanded(child: Container()),
+                          TextWithStyle3(text: ticket['departure_time']),
                           const TextWithStyle4(text: "Departure time"),
-                          Expanded(child: Container()),
-                          const SizedBox(
-                              width: 80,
-                              child: TextWithStyle4(
-                                text: "Number",
-                                align: TextAlign.end,
-                              )),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          TextWithStyle3(
+                            text: ticket['number'].toString(),
+                          ),
+                          const TextWithStyle4(
+                            text: "Number",
+                          )
                         ],
                       )
                     ],
                   ),
-                )
+                ),
+
+                // Padding(
+                //   padding: const EdgeInsets.only(
+                //       top: 5, right: 16, left: 16, bottom: 16),
+                //   child: Column(
+                //     children: [
+                //       Row(
+                //         children: [
+                //           const SizedBox(
+                //               width: 50, child: TextWithStyle3(text: "1 MAY")),
+                //           Expanded(child: Container()),
+                //           const TextWithStyle3(text: "08:00 AM"),
+                //           Expanded(child: Container()),
+                //           const SizedBox(
+                //               width: 50,
+                //               child: TextWithStyle3(
+                //                 text: "23",
+                //                 align: TextAlign.end,
+                //               )),
+                //         ],
+                //       ),
+                //       Row(
+                //         children: [
+                //           const SizedBox(
+                //               width: 80, child: TextWithStyle4(text: "Date")),
+                //           Expanded(child: Container()),
+                //           const TextWithStyle4(text: "Departure time"),
+                //           Expanded(child: Container()),
+                //           const SizedBox(
+                //               width: 80,
+                //               child: TextWithStyle4(
+                //                 text: "Number",
+                //                 align: TextAlign.end,
+                //               )),
+                //         ],
+                //       )
+                //     ],
+                //   ),
+                // )
               ],
             ),
           ),

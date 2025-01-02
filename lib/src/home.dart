@@ -4,12 +4,14 @@ import 'package:ticket_app/src/widgets/app_double_text.dart';
 import 'package:ticket_app/src/widgets/ticket_view.dart';
 import 'package:ticket_app/styles/media_path.dart';
 import 'package:ticket_app/styles/styles.dart';
+import 'package:ticket_app/utilis/all_json.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // List ticketlists = ticketList;
     return Scaffold(
       backgroundColor: AppStyle.bgColor,
       body: ListView(
@@ -82,18 +84,23 @@ class Home extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                const SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      TicketView(),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      TicketView(),
-                    ],
-                  ),
-                )
+                SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                        children: ticketList
+                            .take(3)
+                            .map((singleTicket) => TicketView(
+                                  ticket: singleTicket,
+                                ))
+                            .toList())
+                    // [
+                    //   TicketView(),
+                    //   SizedBox(
+                    //     width: 15,
+                    //   ),
+                    //   TicketView(),
+                    // ],
+                    ),
               ],
             ),
           ),
