@@ -1,5 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:ticket_app/route/routes.dart';
 import 'package:ticket_app/src/widgets/app_double_text.dart';
 import 'package:ticket_app/src/widgets/ticket_view.dart';
 import 'package:ticket_app/styles/media_path.dart';
@@ -77,9 +79,10 @@ class Home extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const AppDoubleText(
+                AppDoubleText(
                   leadingText: 'Upcomming Flights',
                   endText: 'View all',
+                  func: () => GoRouter.of(context).goNamed(Routes.allTicket),
                 ),
                 const SizedBox(
                   height: 15,
@@ -101,6 +104,14 @@ class Home extends StatelessWidget {
                     //   TicketView(),
                     // ],
                     ),
+                AppDoubleText(
+                  leadingText: 'Hotels',
+                  endText: 'View all',
+                  func: () => GoRouter.of(context).goNamed(Routes.allHotels),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
               ],
             ),
           ),

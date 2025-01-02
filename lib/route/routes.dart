@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ticket_app/src/all_hotels.dart';
 import 'package:ticket_app/src/all_ticket.dart';
 import 'package:ticket_app/src/home.dart';
 import 'package:ticket_app/src/profile.dart';
@@ -13,6 +14,7 @@ class Routes {
   static const String tickets = '/tickets';
   static const String profile = '/profile';
   static const String allTicket = '/all_ticket';
+  static const String allHotels = '/all_hotels';
 }
 
 class RoutePages {
@@ -48,7 +50,13 @@ class RoutePages {
             name: Routes.allTicket,
             pageBuilder: (context, state) =>
                 const MaterialPage(child: AllTicket()),
-          )
+          ),
+          GoRoute(
+            path: Routes.allHotels,
+            name: Routes.allHotels,
+            pageBuilder: (context, state) =>
+                const MaterialPage(child: AllHotels()),
+          ),
         ])
   ]);
 }
