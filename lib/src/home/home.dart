@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ticket_app/route/routes.dart';
+import 'package:ticket_app/src/home/widgets/hotels.dart';
 import 'package:ticket_app/src/widgets/app_double_text.dart';
 import 'package:ticket_app/src/widgets/ticket_view.dart';
 import 'package:ticket_app/styles/media_path.dart';
@@ -112,6 +113,15 @@ class Home extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
+                SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                        children: hotelList
+                            .take(3)
+                            .map((singleHotel) => Hotels(
+                                  hotel: singleHotel,
+                                ))
+                            .toList()))
               ],
             ),
           ),

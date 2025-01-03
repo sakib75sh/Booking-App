@@ -1,3 +1,5 @@
+import 'package:ticket_app/styles/media_path.dart';
+
 class ClassName {
   int ticketttt = 8;
 }
@@ -50,5 +52,50 @@ List<Map<String, dynamic>> ticketList = [
     'date': "12 MAY",
     'departure_time': "11:00 ΑΜ",
     "number": 55
+  },
+];
+
+List<Map<String, dynamic>> hotelList = [
+  {
+    'image': AppMedia.hotelRoom0,
+    'place': 'Free space',
+    'destination': 'London',
+    'price': 30
+  },
+  {
+    'image': AppMedia.hotelRoom1,
+    'place': 'View Space',
+    'destination': 'London',
+    'price': 35
+  },
+  {
+    'image': AppMedia.hotelRoom,
+    'place': 'Open Space',
+    'destination': 'London',
+    'price': 25
+  },
+  {
+    'image': AppMedia.poolView,
+    'place': 'Global Will',
+    'destination': 'London',
+    'price': 40
+  },
+  {
+    'image': AppMedia.cityView,
+    'place': 'Tallest Building',
+    'destination': 'Dubai',
+    'price': 65
+  },
+  {
+    'image': AppMedia.cityView0,
+    'place': 'Green City',
+    'destination': 'Dubai',
+    'price': 70
+  },
+  {
+    'image': AppMedia.cityView1,
+    'place': 'Beautiful City',
+    'destination': 'Dubai',
+    'price': 75
   },
 ];

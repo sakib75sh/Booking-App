@@ -16,7 +16,7 @@ class TicketView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return SizedBox(
       width: size.width * 0.85,
-      height: 189,
+      height: 185,
       child: Column(
         children: [
           Container(

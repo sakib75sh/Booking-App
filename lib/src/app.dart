@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/src/home.dart';
-import 'package:ticket_app/src/profile.dart';
-import 'package:ticket_app/src/search.dart';
-import 'package:ticket_app/src/tickets.dart';
+import 'package:ticket_app/src/home/home.dart';
+import 'package:ticket_app/src/profile/profile.dart';
+import 'package:ticket_app/src/search/search.dart';
+import 'package:ticket_app/src/tickets/tickets.dart';
 
 class App extends StatefulWidget {
   const App({super.key});

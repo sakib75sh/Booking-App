@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ticket_app/src/all_hotels.dart';
-import 'package:ticket_app/src/all_ticket.dart';
-import 'package:ticket_app/src/home.dart';
-import 'package:ticket_app/src/profile.dart';
-import 'package:ticket_app/src/search.dart';
-import 'package:ticket_app/src/tickets.dart';
+import 'package:ticket_app/src/home/all_hotels.dart';
+import 'package:ticket_app/src/home/all_ticket.dart';
+import 'package:ticket_app/src/home/home.dart';
+import 'package:ticket_app/src/profile/profile.dart';
+import 'package:ticket_app/src/search/search.dart';
+import 'package:ticket_app/src/tickets/tickets.dart';
 import 'package:ticket_app/src/widgets/bottom_nav_bar.dart';
 
 class Routes {
