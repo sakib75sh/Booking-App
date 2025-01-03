@@ -1,7 +1,7 @@
 class AppMedia {
   static const _baseImage = "assets/images";
   static const logo = "$_baseImage/istockphoto-1137971264-612x612.jpg";
-  static const hotelRoom = "$_baseImage/hotel room.jpg";
+  static const hotelRoom = "$_baseImage/hotel room.webp";
   static const hotelRoom0 = "$_baseImage/hotel room0.jpg";
   static const hotelRoom1 = "$_baseImage/hotel room11.jpg";
 

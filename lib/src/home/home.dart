@@ -121,7 +121,10 @@ class Home extends StatelessWidget {
                             .map((singleHotel) => Hotels(
                                   hotel: singleHotel,
                                 ))
-                            .toList()))
+                            .toList())),
+                const SizedBox(
+                  height: 8,
+                )
               ],
             ),
           ),
