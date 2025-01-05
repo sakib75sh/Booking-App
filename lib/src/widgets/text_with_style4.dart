@@ -17,8 +17,9 @@ class TextWithStyle4 extends StatelessWidget {
     return Text(
       text,
       textAlign: align,
-      style: AppStyle.headlineStyle4.copyWith(
-          color: isticketDetails == false ? Colors.white : Colors.black),
+      style: isticketDetails == false
+          ? AppStyle.headlineStyle4.copyWith(color: Colors.white)
+          : AppStyle.headlineStyle4.copyWith(color: Colors.grey.shade300),
     );
   }
 }

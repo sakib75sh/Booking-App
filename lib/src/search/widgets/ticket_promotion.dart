@@ -113,7 +113,10 @@ class TicketPromotion extends StatelessWidget {
                     style: AppStyle.headlineStyle2.copyWith(
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
-                  Image.asset(AppMedia.loveEmoji)
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Image.asset(AppMedia.loveTest)
                   // const Image(image: )
                 ],
               ),

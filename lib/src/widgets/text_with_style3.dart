@@ -19,7 +19,7 @@ class TextWithStyle3 extends StatelessWidget {
       textAlign: align,
       style: isTickteDtails == false
           ? AppStyle.headlineStyle3.copyWith(color: Colors.white)
-          : AppStyle.headlineStyle3.copyWith(color: Colors.black),
+          : AppStyle.headlineStyle3,
     );
   }
 }

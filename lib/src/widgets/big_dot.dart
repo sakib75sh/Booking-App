@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_app/styles/styles.dart';
 
 class BigDot extends StatelessWidget {
   final bool isTicketDetails;
@@ -14,7 +15,9 @@ class BigDot extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border.all(
               width: 2.5,
-              color: isTicketDetails == false ? Colors.white : Colors.black),
+              color: isTicketDetails == false
+                  ? Colors.white
+                  : AppStyle.ticketDetailsDot),
           borderRadius: BorderRadius.circular(20)),
     );
   }

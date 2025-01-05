@@ -30,7 +30,7 @@ class LayoutbuilderWidget extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: isTicketDetails == false
                               ? Colors.white
-                              : Colors.black),
+                              : Colors.grey.shade400),
                     ),
                   )),
         );

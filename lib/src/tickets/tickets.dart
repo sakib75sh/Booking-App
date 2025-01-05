@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/src/tickets/widgets/ticket_details.dart';
 import 'package:ticket_app/src/tickets/widgets/ticket_tab.dart';
+import 'package:ticket_app/src/widgets/ticket_view.dart';
 
 import 'package:ticket_app/styles/styles.dart';
+import 'package:ticket_app/utilis/all_json.dart';
 
 class Tickets extends StatelessWidget {
   const Tickets({super.key});
@@ -25,7 +27,13 @@ class Tickets extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const TicketDetails()
+            const TicketDetails(),
+            Center(
+              child: TicketView(
+                ticket: ticketList[0],
+                fullScreen: true,
+              ),
+            ),
           ]),
     );
   }

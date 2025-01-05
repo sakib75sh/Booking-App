@@ -1,11 +1,11 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/src/tickets/widgets/tickte_container.dart';
 import 'package:ticket_app/src/widgets/big_dot.dart';
 import 'package:ticket_app/src/widgets/layoutbuilder_widget.dart';
 import 'package:ticket_app/src/widgets/text_with_style3.dart';
 import 'package:ticket_app/src/widgets/text_with_style4.dart';
-import 'package:ticket_app/src/widgets/ticket_view.dart';
-
+import 'package:ticket_app/styles/styles.dart';
 import 'package:ticket_app/utilis/all_json.dart';
 
 class TicketDetails extends StatelessWidget {
@@ -29,8 +29,8 @@ class TicketDetails extends StatelessWidget {
               Container(
                 // margin: EdgeInsets.only(right: fullScreen == true ? 0 : 16),
                 padding: const EdgeInsets.all(16),
-                decoration: const BoxDecoration(
-                    color: Colors.white,
+                decoration: BoxDecoration(
+                    color: AppStyle.ticketDetailsBg,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(21),
                         topRight: Radius.circular(21))),
@@ -39,8 +39,9 @@ class TicketDetails extends StatelessWidget {
                     //------show Departure and destination with icons
                     Row(
                       children: [
-                        const TextWithStyle3(
-                          text: "NYC",
+                        TextWithStyle3(
+                          // text: "NYC",
+                          text: ticketList[0]['from']['code'],
                           isTickteDtails: true,
                         ),
                         Expanded(child: Container()),
@@ -53,11 +54,11 @@ class TicketDetails extends StatelessWidget {
                             Center(
                                 child: Transform.rotate(
                               angle: 1.57,
-                              child: const
+                              child:
                                   // Text("plane")
                                   Icon(
                                 Icons.local_airport_rounded,
-                                color: Colors.black,
+                                color: AppStyle.planeSecondColor,
                               ),
                             ))
                           ],
@@ -66,33 +67,36 @@ class TicketDetails extends StatelessWidget {
                           isTicketDetails: true,
                         ),
                         Expanded(child: Container()),
-                        const TextWithStyle3(
-                          text: "SAH",
+                        TextWithStyle3(
+                          text: ticketList[0]['to']['code'],
                           isTickteDtails: true,
                         )
                       ],
+                    ),
+                    SizedBox(
+                      height: 7,
                     ),
 
                     //------show Departure and destination with icons
                     Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 100,
                           child: TextWithStyle4(
-                            text: "London",
+                            text: ticketList[0]['from']['name'],
                             isticketDetails: true,
                           ),
                         ),
                         Expanded(child: Container()),
-                        const TextWithStyle4(
-                          text: "flying_time",
+                        TextWithStyle4(
+                          text: ticketList[0]['flying_time'],
                           isticketDetails: true,
                         ),
                         Expanded(child: Container()),
-                        const SizedBox(
+                        SizedBox(
                             width: 100,
                             child: TextWithStyle4(
-                              text: "name",
+                              text: ticketList[0]['to']['name'],
                               isticketDetails: true,
                               align: TextAlign.end,
                             )),
@@ -102,6 +106,7 @@ class TicketDetails extends StatelessWidget {
                 ),
               ),
               Container(
+                height: 10,
                 margin: const EdgeInsets.symmetric(horizontal: 16),
                 child: const LayoutbuilderWidget(
                   randomNumber: 14,
@@ -111,8 +116,8 @@ class TicketDetails extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.only(right: fullScreen == true ? 0 : 16),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration: BoxDecoration(
+                  color: AppStyle.ticketDetailsBg,
                   // borderRadius: const BorderRadius.only(
                   //     bottomLeft: Radius.circular(21),
                   //     bottomRight: Radius.circular(21)),
@@ -125,12 +130,15 @@ class TicketDetails extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Column(
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextWithStyle3(
-                                text: "date",
+                                text: ticketList[0]['date'],
                                 isTickteDtails: true,
+                              ),
+                              SizedBox(
+                                height: 7,
                               ),
                               TextWithStyle4(
                                 text: "Date",
@@ -138,12 +146,15 @@ class TicketDetails extends StatelessWidget {
                               )
                             ],
                           ),
-                          const Column(
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               TextWithStyle3(
-                                text: 'departure_time',
+                                text: ticketList[0]['departure_time'],
                                 isTickteDtails: true,
+                              ),
+                              SizedBox(
+                                height: 7,
                               ),
                               TextWithStyle4(
                                 text: "Departure time",
@@ -155,8 +166,11 @@ class TicketDetails extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               TextWithStyle3(
-                                text: 'number'.toString(),
+                                text: ticketList[0]['number'].toString(),
                                 isTickteDtails: true,
+                              ),
+                              SizedBox(
+                                height: 7,
                               ),
                               const TextWithStyle4(
                                 text: "Number",
@@ -170,13 +184,17 @@ class TicketDetails extends StatelessWidget {
                   ],
                 ),
               ),
+              const Divider(
+                height: 20,
+              ),
+              const TickteContainer(
+                leadingText1: 'Flutter DB',
+                leadingText2: 'Passenger',
+                endingText1: '5221 364869',
+                endingText2: 'passport',
+              ),
               Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  child: const Divider(
-                    height: 0,
-                  )),
-              const TickteContainer(),
-              Container(
+                height: 20,
                 margin: const EdgeInsets.symmetric(horizontal: 16),
                 child: const LayoutbuilderWidget(
                   randomNumber: 14,
@@ -184,8 +202,14 @@ class TicketDetails extends StatelessWidget {
                   isTicketDetails: true,
                 ),
               ),
-              const TickteContainer(),
+              const TickteContainer(
+                leadingText1: '364738 2827478',
+                leadingText2: 'Number of E-ticket',
+                endingText1: 'B2SG28',
+                endingText2: 'Booking code',
+              ),
               Container(
+                height: 20,
                 margin: const EdgeInsets.symmetric(horizontal: 16),
                 child: const LayoutbuilderWidget(
                   randomNumber: 14,
@@ -193,89 +217,49 @@ class TicketDetails extends StatelessWidget {
                   isTicketDetails: true,
                 ),
               ),
-              const TickteContainer(),
+              const TickteContainer(
+                leadingText1: '9', //it's not mater because isPayment =true
+                leadingText2: 'Payment method',
+                endingText1: '\$249.99',
+                endingText2: 'Price',
+                isPayment: true,
+              ),
+              const Divider(
+                height: 20,
+              ),
               Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  child: const Divider(
-                    height: 0,
-                  )),
-              Container(
+                padding: EdgeInsets.only(top: 5, bottom: 15),
                 // margin: EdgeInsets.only(right: fullScreen == true ? 0 : 16),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration: BoxDecoration(
+                  color: AppStyle.ticketDetailsBg,
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(21),
                       bottomRight: Radius.circular(21)),
                 ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 5, right: 16, left: 16, bottom: 16),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              TextWithStyle3(
-                                text: "date",
-                                isTickteDtails: true,
-                              ),
-                              TextWithStyle4(
-                                text: "Date",
-                                isticketDetails: true,
-                              )
-                            ],
-                          ),
-                          const Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              TextWithStyle3(
-                                text: 'departure_time',
-                                isTickteDtails: true,
-                              ),
-                              TextWithStyle4(
-                                text: "Departure time",
-                                isticketDetails: true,
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              TextWithStyle3(
-                                text: 'number'.toString(),
-                                isTickteDtails: true,
-                              ),
-                              const TextWithStyle4(
-                                text: "Number",
-                                isticketDetails: true,
-                              )
-                            ],
-                          )
-                        ],
-                      ),
+                child:
+
+                    //
+                    Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: BarcodeWidget(
+                      height: 70,
+                      data: 'https://github.com/sakib75sh',
+                      barcode: Barcode.code128(),
+                      drawText: false,
                     ),
-                  ],
+                  ),
                 ),
               ),
+
+              //
             ],
           ),
         ),
         const SizedBox(
           height: 20,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: ticketList
-              .take(1)
-              .map((singleTicket) => TicketView(
-                    fullScreen: true,
-                    ticket: singleTicket,
-                  ))
-              .toList(),
-        )
       ],
     );
   }

@@ -97,6 +97,7 @@ class Home extends StatelessWidget {
                                   ticket: singleTicket,
                                 ))
                             .toList())
+
                     // [
                     //   TicketView(),
                     //   SizedBox(

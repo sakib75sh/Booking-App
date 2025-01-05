@@ -12,4 +12,6 @@ class AppMedia {
   static const cityView1 = "$_baseImage/city view1.jpg";
   static const planeView = "$_baseImage/plane view.jpg";
   static const loveEmoji = "$_baseImage/love emoji1.png";
+  static const loveTest = "$_baseImage/love emoji.png";
+  static const visaIcon = "$_baseImage/visa.png";
 }

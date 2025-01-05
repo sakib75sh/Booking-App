@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/src/widgets/text_with_style3.dart';
 import 'package:ticket_app/src/widgets/text_with_style4.dart';
+import 'package:ticket_app/styles/media_path.dart';
+import 'package:ticket_app/styles/styles.dart';
 
 class TickteContainer extends StatelessWidget {
-  const TickteContainer({super.key});
+  final bool isPayment;
+  final String leadingText1;
+  final String leadingText2;
+  final String endingText1;
+  final String endingText2;
+  const TickteContainer(
+      {super.key,
+      this.isPayment = false,
+      required this.leadingText1,
+      required this.leadingText2,
+      required this.endingText1,
+      required this.endingText2});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: EdgeInsets.only(right: fullScreen == true ? 0 : 16),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        // borderRadius: const BorderRadius.only(
-        //     bottomLeft: Radius.circular(21),
-        //     bottomRight: Radius.circular(21)),
+      decoration: BoxDecoration(
+        color: AppStyle.ticketDetailsBg,
       ),
       child: Column(
         children: [
@@ -23,15 +32,31 @@ class TickteContainer extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextWithStyle3(
-                      text: "date",
-                      isTickteDtails: true,
+                    isPayment == false
+                        ? TextWithStyle3(
+                            text: leadingText1,
+                            isTickteDtails: true,
+                          )
+                        : Row(
+                            children: [
+                              Image.asset(
+                                AppMedia.visaIcon,
+                                scale: 28,
+                              ),
+                              TextWithStyle3(
+                                text: "***2462",
+                                isTickteDtails: true,
+                              )
+                            ],
+                          ),
+                    SizedBox(
+                      height: 7,
                     ),
                     TextWithStyle4(
-                      text: "Date",
+                      text: leadingText2,
                       isticketDetails: true,
                     )
                   ],
@@ -40,12 +65,15 @@ class TickteContainer extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     TextWithStyle3(
-                      text: 'number'.toString(),
+                      text: endingText1,
                       isTickteDtails: true,
                     ),
-                    const TextWithStyle3(
-                      text: "Number",
-                      isTickteDtails: true,
+                    SizedBox(
+                      height: 7,
+                    ),
+                    TextWithStyle4(
+                      text: endingText2,
+                      isticketDetails: true,
                     )
                   ],
                 )
