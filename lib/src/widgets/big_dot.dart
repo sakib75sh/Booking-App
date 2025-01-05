@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BigDot extends StatelessWidget {
-  const BigDot({super.key});
+  final bool isTicketDetails;
+  const BigDot({super.key, this.isTicketDetails = false});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,9 @@ class BigDot extends StatelessWidget {
       padding: const EdgeInsets.all(3),
 
       decoration: BoxDecoration(
-          border: Border.all(width: 2.5, color: Colors.white),
+          border: Border.all(
+              width: 2.5,
+              color: isTicketDetails == false ? Colors.white : Colors.black),
           borderRadius: BorderRadius.circular(20)),
     );
   }

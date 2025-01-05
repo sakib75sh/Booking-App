@@ -4,7 +4,9 @@ import 'package:ticket_app/route/routes.dart';
 import 'package:ticket_app/src/search/widgets/find_ticket_button.dart';
 import 'package:ticket_app/src/search/widgets/route_searchbox.dart';
 import 'package:ticket_app/src/search/widgets/ticket_hotel_tab.dart';
+import 'package:ticket_app/src/search/widgets/ticket_promotion.dart';
 import 'package:ticket_app/src/widgets/app_double_text.dart';
+
 import 'package:ticket_app/styles/styles.dart';
 
 class Search extends StatelessWidget {
@@ -12,7 +14,7 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppStyle.bgColor,
       body: ListView(
@@ -56,22 +58,14 @@ class Search extends StatelessWidget {
             func: () => GoRouter.of(context).goNamed(Routes.allTicket),
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
+          const TicketPromotion(),
           //
-          Row(
-            children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                width: size.width * 0.42,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white),
-                child: const Text("A long Text"),
-              )
-            ],
+
+          const SizedBox(
+            height: 15,
           )
         ],
       ),

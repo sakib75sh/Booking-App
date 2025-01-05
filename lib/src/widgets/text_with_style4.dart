@@ -5,15 +5,20 @@ import '../../styles/styles.dart';
 class TextWithStyle4 extends StatelessWidget {
   final String text;
   final TextAlign align;
+  final bool isticketDetails;
   const TextWithStyle4(
-      {super.key, required this.text, this.align = TextAlign.start});
+      {super.key,
+      required this.text,
+      this.align = TextAlign.start,
+      this.isticketDetails = false});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       textAlign: align,
-      style: AppStyle.headlineStyle4.copyWith(color: Colors.white),
+      style: AppStyle.headlineStyle4.copyWith(
+          color: isticketDetails == false ? Colors.white : Colors.black),
     );
   }
 }

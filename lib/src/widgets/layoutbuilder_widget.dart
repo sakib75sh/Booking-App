@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 class LayoutbuilderWidget extends StatelessWidget {
   final int randomNumber;
   final double lineWidth;
+  final bool isTicketDetails;
 
   const LayoutbuilderWidget(
-      {super.key, required this.randomNumber, this.lineWidth = 3});
+      {super.key,
+      required this.randomNumber,
+      this.lineWidth = 3,
+      this.isTicketDetails = false});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +26,11 @@ class LayoutbuilderWidget extends StatelessWidget {
               (index) => SizedBox(
                     height: 1,
                     width: lineWidth,
-                    child: const DecoratedBox(
-                      decoration: BoxDecoration(color: Colors.white),
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                          color: isTicketDetails == false
+                              ? Colors.white
+                              : Colors.black),
                     ),
                   )),
         );
