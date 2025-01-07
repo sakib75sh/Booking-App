@@ -39,7 +39,7 @@ class TicketPromotion extends StatelessWidget {
               ),
               Text(
                 "20% Discount on early booking of this flight. Don't miss",
-                style: AppStyle.headlineStyle2,
+                style: AppStyle.headlineStyle2.copyWith(fontSize: 19),
               )
             ],
           ),
@@ -55,7 +55,7 @@ class TicketPromotion extends StatelessWidget {
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                   //  EdgeInsets.all(15),
                   width: size.width * 0.44,
-                  height: 205,
+                  height: 200,
                   decoration: BoxDecoration(
                       color: const Color(0xFF3AB8B8),
                       borderRadius: BorderRadius.circular(10)),
@@ -65,14 +65,16 @@ class TicketPromotion extends StatelessWidget {
                       Text(
                         "Discount\nfor survey",
                         style: AppStyle.headlineStyle2.copyWith(
-                            fontWeight: FontWeight.bold, color: Colors.white),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 21),
                       ),
                       Text(
                         "Take the survey about our services and get discount",
                         style: AppStyle.headlineStyle2.copyWith(
                             fontWeight: FontWeight.w500,
                             color: Colors.white,
-                            fontSize: 18),
+                            fontSize: 17),
                       )
                     ],
                   ),
@@ -108,13 +110,18 @@ class TicketPromotion extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 20,
+                  ),
                   Text(
                     "Take Love",
                     style: AppStyle.headlineStyle2.copyWith(
-                        fontWeight: FontWeight.bold, color: Colors.white),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Image.asset(AppMedia.loveTest)
                   // const Image(image: )
