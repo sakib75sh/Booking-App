@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ticket_app/route/routes.dart';
 import 'package:ticket_app/src/home/widgets/hotels.dart';
+import 'package:ticket_app/src/home/widgets/ticket_info.dart';
 import 'package:ticket_app/src/widgets/app_double_text.dart';
 import 'package:ticket_app/src/widgets/ticket_view.dart';
 import 'package:ticket_app/styles/media_path.dart';
@@ -17,12 +18,16 @@ class Home extends StatelessWidget {
     // List ticketlists = ticketList;
     return Scaffold(
       backgroundColor: AppStyle.bgColor,
+      // appBar: AppBar(),
       body: ListView(
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               children: [
+                SizedBox(
+                  height: 15,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -93,8 +98,28 @@ class Home extends StatelessWidget {
                     child: Row(
                         children: ticketList
                             .take(3)
-                            .map((singleTicket) => TicketView(
-                                  ticket: singleTicket,
+                            .map((singleTicket) => GestureDetector(
+                                  onTap: () {
+                                    var index =
+                                        ticketList.indexOf(singleTicket);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => TicketInfo(
+                                                ticketIndexH: index,
+                                              )),
+                                    );
+
+                                    // var index =
+                                    //     ticketList.indexOf(singleTicket);
+                                    // // Navigator.pushNamed(context, Routes.tickets);
+                                    // context.goNamed(Routes.ticketInfo,
+                                    //     extra: {'index': index});
+                                    // print('tapped $index');
+                                  },
+                                  child: TicketView(
+                                    ticket: singleTicket,
+                                  ),
                                 ))
                             .toList())
 

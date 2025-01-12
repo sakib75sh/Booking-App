@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ticket_app/route/routes.dart';
+
 import 'package:ticket_app/src/widgets/ticket_view.dart';
 import 'package:ticket_app/utilis/all_json.dart';
 
@@ -23,11 +24,20 @@ class AllTicket extends StatelessWidget {
         child: Center(
           child: Column(
             children: ticketList
-                .map((singleTicket) => Container(
-                      margin: EdgeInsets.only(bottom: 20),
-                      child: TicketView(
-                        ticket: singleTicket,
-                        fullScreen: true,
+                .map((singleTicket) => GestureDetector(
+                      onTap: () {
+                        var index = ticketList.indexOf(singleTicket);
+                        // Navigator.pushNamed(context, Routes.tickets);
+                        context.goNamed(Routes.ticketInfo,
+                            extra: {'index': index});
+                        print('tapped $index');
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 20),
+                        child: TicketView(
+                          ticket: singleTicket,
+                          fullScreen: true,
+                        ),
                       ),
                     ))
                 .toList(),
