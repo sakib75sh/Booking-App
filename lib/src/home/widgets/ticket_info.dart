@@ -13,8 +13,14 @@ class TicketInfo extends StatelessWidget {
   final int? ticketIndex;
   final int? ticketIndexH;
   final bool? isFromAllTicket;
+  final bool? fromHOme;
+
   const TicketInfo(
-      {super.key, this.isFromAllTicket, this.ticketIndex, this.ticketIndexH});
+      {super.key,
+      this.isFromAllTicket,
+      this.ticketIndex,
+      this.ticketIndexH,
+      this.fromHOme});
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +32,14 @@ class TicketInfo extends StatelessWidget {
             // isFromAllTicket == true
             //     ?
             InkWell(
-          onTap: () => ticketIndex == null
-              ? Navigator.pop(context)
+          onTap: () => fromHOme == true
+              ? context.goNamed(Routes.home)
               : context.goNamed(Routes.allTicket),
           child: Icon(Icons.arrow_back),
         ),
         // : null,
         title: Text(
-          "Tickets",
+          fromHOme == true ? 'Ticket Details' : "Tickets",
           style: AppStyle.headlineStyle1.copyWith(fontSize: 35),
         ),
       ),

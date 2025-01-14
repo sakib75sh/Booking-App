@@ -14,7 +14,9 @@ class Hotels extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       margin: EdgeInsets.only(
-          right: fullScreen == true ? 0 : 16,
+          right: fullScreen == true
+              ? 0
+              : 16, //..লজিক না হলেও কাজ করবে কারণ শুধু homePage এ use হচ্ছে
           bottom: fullScreen == true ? 16 : 0),
       width: fullScreen == true ? size.width * 0.85 : size.width * 0.6,
       height: 310,

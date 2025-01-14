@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ticket_app/src/home/all_hotels.dart';
+import 'package:ticket_app/src/home/all_hotels1.dart';
 import 'package:ticket_app/src/home/all_ticket.dart';
 import 'package:ticket_app/src/home/home.dart';
+import 'package:ticket_app/src/home/widgets/hotel_details.dart';
 import 'package:ticket_app/src/home/widgets/ticket_info.dart';
 import 'package:ticket_app/src/profile/profile.dart';
 import 'package:ticket_app/src/search/search.dart';
@@ -17,6 +19,8 @@ class Routes {
   static const String allTicket = '/all_ticket';
   static const String ticketInfo = '/ticket_info';
   static const String allHotels = '/all_hotels';
+  static const String allHotels1 = '/all_hotels1';
+  static const String hotelDetails = '/hotel_details';
 }
 
 class RoutePages {
@@ -56,6 +60,11 @@ class RoutePages {
       name: Routes.allHotels,
       pageBuilder: (context, state) => const MaterialPage(child: AllHotels()),
     ),
+    GoRoute(
+      path: Routes.allHotels1,
+      name: Routes.allHotels1,
+      pageBuilder: (context, state) => const MaterialPage(child: AllHotels1()),
+    ),
 
     //
     GoRoute(
@@ -65,9 +74,23 @@ class RoutePages {
           var index = state.extra as Map;
           return TicketInfo(
             ticketIndex: index['index'],
+            fromHOme: index['fromHome'],
           );
         }),
 
     //
+
+    GoRoute(
+        path: Routes.hotelDetails,
+        name: Routes.hotelDetails,
+        builder: (context, state) {
+          var hotelIndex = state.extra as Map;
+          return HotelDetails(
+            index: hotelIndex['hotelIndex'],
+          );
+        }
+        //  =>
+        //     const MaterialPage(child: HotelDetails()),
+        ),
   ]);
 }
