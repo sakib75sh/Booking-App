@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/styles/media_path.dart';
+
 import 'package:ticket_app/styles/styles.dart';
 
 class ProfilePic extends StatelessWidget {

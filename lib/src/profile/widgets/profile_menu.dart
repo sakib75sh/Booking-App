@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:ticket_app/styles/styles.dart';
 
 class ProfileMenu extends StatelessWidget {
