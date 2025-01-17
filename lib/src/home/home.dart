@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ticket_app/route/routes.dart';
+import 'package:ticket_app/src/home/side%20bar/side_bar.dart';
 import 'package:ticket_app/src/home/widgets/hotels.dart';
 
 import 'package:ticket_app/src/widgets/app_double_text.dart';
@@ -18,7 +19,14 @@ class Home extends StatelessWidget {
     // List ticketlists = ticketList;
     return Scaffold(
       backgroundColor: AppStyle.bgColor,
-      // appBar: AppBar(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "IntellinetY",
+          style: AppStyle.headlineStyle1,
+        ),
+      ),
+      drawer: SideBar(),
       body: ListView(
         children: [
           Container(

@@ -15,6 +15,7 @@ class AppStyle {
   static Color circleColor = const Color(0xFf189999);
   static Color ticketDetailsBg = const Color(0xFFFFFFFF);
   static Color ticketDetailsDot = const Color(0xFF8ACCF7);
+  static Color iconColor = const Color(0xFFFF7643);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);
