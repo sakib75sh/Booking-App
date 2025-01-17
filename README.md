@@ -2,7 +2,28 @@
 
 A new Flutter project.
 
-## Getting Started
+# Home Page
+![image](https://github.com/user-attachments/assets/85466b04-ea59-488a-a43b-02484446ba1b)
+
+# Search Page
+![image](https://github.com/user-attachments/assets/5a4a7f34-51c7-494b-ba07-199d9a8b139b)
+
+# Ticket Details 
+![image](https://github.com/user-attachments/assets/01a86484-91c4-42e4-91b7-abbb0830b692)
+
+# Profile Page
+![image](https://github.com/user-attachments/assets/1ed621b0-7d40-4f93-a2fb-2867a43d8e00)
+
+# All tickets
+![image](https://github.com/user-attachments/assets/9250aa0a-dd08-4208-b21e-759d804d4be8)
+
+# All hotels
+![image](https://github.com/user-attachments/assets/d4a3b329-26a1-4d53-82a9-696373f89de4)
+
+# Hotel Details 
+![image](https://github.com/user-attachments/assets/8a29f57b-df21-4110-9575-f5a32b5b7007)
+
+
 
 This project is a starting point for a Flutter application.
 
